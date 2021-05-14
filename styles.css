@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+:root {
+  /* colors */
+  --vdkmagenta: hsl(300, 43%, 22%);
+  --sftpink: hsl(333, 80%, 67%);
+  --dkgrmagenta: hsl(303, 10%, 53%);
+  --ltgrmagenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  /* typography */
+  --ff-primary: "Spartan", sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fs-body: 0.9375rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* overall layout */
+body {
+  font-family: var(--ff-primary);
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 0vw top 0vh, right 0vw top 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-top: 4.6875rem;
+  margin-bottom: 3.1875rem;
+}
+
+/* top section */
+.text {
+  text-align: center;
+}
+
+.text h1 {
+  margin-bottom: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--vdkmagenta);
+}
+
+.text p {
+  margin-bottom: 2.8125rem;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--dkgrmagenta);
+}
+
+.ratings__box {
+  background-color: var(--ltgrmagenta);
+  margin-bottom: 0.9375rem;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-radius: 0.625rem;
+}
+
+.ratings__box:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.ratings__image {
+  background-image: url("./images/icon-star.svg");
+  background-repeat: space;
+  width: 6.25rem;
+  height: 1rem;
+  margin: 0 auto;
+  margin-bottom: 0.9375rem;
+}
+
+.ratings__box p {
+  text-align: center;
+  color: var(--vdkmagenta);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  margin-bottom: 0.9375rem;
+}
+
+/* cards */
+.card {
+  background-color: var(--vdkmagenta);
+  padding: 0 1.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.625rem;
+}
+
+.card:last-of-type {
+  margin-bottom: 0;
+}
+
+.card > p {
+  font-size: var(--fs-body);
+  color: var(--ltgrmagenta);
+  padding-bottom: 2.1875rem;
+}
+
+.card__profile {
+  display: flex;
+  padding-top: 2.5rem;
+  margin-bottom: 1.5626rem;
+}
+
+.card__profile img {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+.card .name-status__name {
+  font-weight: var(--fw-medium);
+  color: var(--white);
+  margin-bottom: 0.3125rem;
+}
+
+.card .name-status__status {
+  font-weight: var(--fw-medium);
+  color: var(--sftpink);
+}
+
+.attribution {
+  margin-bottom: 2rem;
+}
+
+/* desktop */
+@media screen and (min-width: 900px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/bg-pattern-top-desktop.svg"),
+      url("./images/bg-pattern-bottom-desktop.svg");
+    background-position: left 0vw top 0vh, right 0vw bottom 0vh;
+  }
+
+  .container {
+    max-width: 1100px;
+  }
+
+  /* top section */
+  .top-section {
+    display: flex;
+    flex: 1;
+    margin-bottom: 3rem;
+  }
+
+  .text,
+  .ratings {
+    width: 40%;
+  }
+
+  .text {
+    text-align: left;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+    width: 20rem;
+  }
+
+  .text p {
+    margin-bottom: 0;
+  }
+
+  /* ratings */
+  .ratings {
+    width: 60%;
+    margin-left: 8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .ratings__image {
+    margin-left: 1.875rem;
+    margin-right: 1.875rem;
+    margin-bottom: auto;
+    margin-top: auto;
+    min-width: 6.25rem;
+  }
+
+  .ratings__box {
+    display: flex;
+    max-width: 28rem;
+    padding-right: 1.875rem;
+  }
+
+  .ratings__box:nth-child(2) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ratings__box:last-of-type {
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+
+  .ratings__box p {
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: left;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  /* card section */
+  .cards-section {
+    display: flex;
+    padding-top: 1.875rem;
+  }
+
+  .card {
+    width: 33.33%;
+    margin-bottom: 0;
+    margin-right: 1.875rem;
+  }
+
+  .card:last-of-type {
+    margin-right: 0;
+  }
+
+  .left-card,
+  .middle-card {
+    position: relative;
+  }
+
+  .left-card {
+    bottom: 1.875rem;
+  }
+
+  .middle-card {
+    bottom: 0.9375rem;
+  }
+}
